@@ -1,0 +1,46 @@
+Spring Application properties
+
+# Собрание названия настроек Spring Application
+#
+# Ссылка на Spring
+# https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties.core
+#
+# По умолчанию настройки выкладываюся в application.properties - общие настройки.
+# Можно добавлять новые профайлы, например, application-local.properties (можно в IDEA указать профайл в настройках запуска приложения).
+# 
+#
+#
+#
+#
+#
+
+
+Классические настройки:
+
+
+Порт запуска приложения
+server.port=8080
+
+
+Postgres:
+
+Адрес БД
+spring.datasource.url=jdbc:postgresql://localhost:5432/shop
+Логин
+spring.datasource.username=postgres
+Пароль
+spring.datasource.password=Killer86
+
+
+Логирование
+Паттерн
+logging.pattern.console=%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n
+
+Включить отображение SQL в логах
+spring.jpa.show-sql=true
+
+Форматирование SQL
+spring.jpa.propeties.hibernate.format_sql=true
+
+Уровень отображаемых логов - от [trace] и выше
+logging.level.org.hibernate.type.descriptor.sql=trace
