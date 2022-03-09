@@ -5,7 +5,12 @@ Spring Application properties
 # Ссылка на Spring
 # https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties.core
 #
+# Все возможности настроек
+# https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#appendix.application-properties
+#
 # По умолчанию настройки выкладываюся в application.properties - общие настройки.
+# Можно указать так же профили в application.propeties:
+#   spring.profiles.active={название профиля, например из файла ниже local}
 # Можно добавлять новые профайлы, например, application-local.properties (можно в IDEA указать профайл в настройках запуска приложения).
 # 
 #
