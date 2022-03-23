@@ -147,3 +147,12 @@ spring.cloud.gateway.discovery.locator.enabled=true
 spring.cloud.gateway.discovery.locator.lower-case-service-id=true
 
 
+# Настройка ручного перенаправления запросов на нужный микросервис
+spring.cloud.gateway.routes[0].id=test
+# Название микросервиса
+spring.cloud.gateway.routes[0].uri=lb://eclient
+# RequestMapping("/main/) + @GetMapping("/test")
+spring.cloud.gateway.routes[0].predicates[0]=Path=/main/test
+# @GetMapping
+spring.cloud.gateway.routes[0].predicates[1]=Method=GET
+
