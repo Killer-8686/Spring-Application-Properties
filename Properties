@@ -190,3 +190,15 @@ spring.cloud.config.server.git.default-label=main
 logging.pattern.console=%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n
 
 
+-----------------------------------
+
+                 Actuator 
+
+#dependencies {
+#    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+#}
+
+# Включение actuator
+management.endpoint.gateway.enabled=true
+# Какие endpoint хотим включить
+management.endpoints.web.exposure.include=*
