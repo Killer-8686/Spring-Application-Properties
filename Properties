@@ -26,6 +26,8 @@ Spring Application properties
 Порт запуска приложения
 server.port=8080
 
+Профилирование. Можно задавать несколько профилей
+spring.profile.active=micro
 
 Postgres:
 
@@ -158,4 +160,33 @@ spring.cloud.gateway.routes[0].uri=lb://eclient
 spring.cloud.gateway.routes[0].predicates[0]=Path=/main/test
 # @GetMapping
 spring.cloud.gateway.routes[0].predicates[1]=Method=GET
+
+
+
+-----------------------------------
+
+EUREKA GITHUB-CONFIG-SERVER properties.application (локальный файл настроек)
+
+server.port=8888
+
+spring.application.name=github-config-server
+
+# Доступ к GIT репозиторию
+spring.cloud.config.server.git.uri=https://github.com/Killer-8686/shop-properties.git
+
+# Перед запуском клонировать удаленный git репозиторий в локальный git
+spring.cloud.config.server.git.clone-on-start=true
+# Место куда будет клонироваться
+spring.cloud.config.server.git.basedir=file://c://tmp/shop_properties
+
+# Для private репозитория требуется логин-токен
+spring.cloud.config.server.git.username=Killer-8686
+spring.cloud.config.server.git.password=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
+
+# Название ветки которую нужно клонировать
+spring.cloud.config.server.git.default-label=main
+
+# формат вывода логов
+logging.pattern.console=%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n
+
 
