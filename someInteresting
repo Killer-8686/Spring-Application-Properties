@@ -1,0 +1,35 @@
+Аннотации
+
+Отслеживание рекурсивных ссылок
+
+@JsonManagedReference ставится над полем, который ссылается на другой объект
+@JsonBackReference ставится над полем объекты, на который ссылаются извне
+
+
+
+
+Двухстронная ссылка (хозяин - подчиненный) OneToMany
+
+    @OneToMany(mappedBy = "order")
+    private List<Purchase> purchases = new ArrayList<>();
+    
+    @ManyToOne(fetch = FetchType.EAGER, optional = falseб cascade=CascadeType.ALL)   (optional - обязательный, cascade - как дейтсвовать при удалении) 
+    @JoinColumn(name = "order_id", nullable = false)    (колонка, НА которую ссылается, nullable )
+    private Order order;
+    
+    
+@ManyToMany
+
+Таблица Student
+    @ManyToMany
+    @JoinTable (name="student_university",                    (таблица для связи)
+       joinColumns=@JoinColumn (name="student_id"),
+       inverseJoinColumns=@JoinColumn(name="university_id"))
+    private List<University> universities;
+
+Таблица University
+    @ManyToMany
+    @JoinTable(name="student_university",
+       joinColumns=@JoinColumn(name="university_id"), 
+       inverseJoinColumns=@JoinColumn(name="student_id"))
+    private List<Student> students;
