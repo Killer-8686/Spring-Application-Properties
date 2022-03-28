@@ -13,7 +13,10 @@
     @OneToMany(mappedBy = "order")
     private List<Purchase> purchases = new ArrayList<>();
     
-    @ManyToOne(fetch = FetchType.EAGER, optional = falseб cascade=CascadeType.ALL)   (optional - обязательный, cascade - как дейтсвовать при удалении) 
+    @ManyToOne(fetch = FetchType.EAGER, optional = false, cascade=CascadeType.ALL, orphanRemoval = true)   
+                                            (optional - обязательный, cascade - как дейтсвовать при удалении, orphanRemoval = действия при удалении)
+    
+    
     @JoinColumn(name = "order_id", nullable = false)    (колонка, НА которую ссылается, nullable )
     private Order order;
     
