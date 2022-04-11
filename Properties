@@ -128,7 +128,7 @@ eureka.client.service-url.defaultZone=http://localhost:8081/eureka
 # формат вывода логов
 logging.pattern.console=%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n
 
-# каждый инстанс будем иметь уникальный id на сервере. ДЛя нескольких копий одного МС. Проверка работы Load Balancer
+# каждый инстанс будем иметь уникальный id на сервере. Для нескольких копий одного МС. Проверка работы Load Balancer
 eureka.instance.instance-id=${spring.application.name}:${random.value}
 
 -----------------------------------
@@ -180,8 +180,8 @@ spring.cloud.config.server.git.clone-on-start=true
 spring.cloud.config.server.git.basedir=file://c://tmp/shop_properties
 
 # Для private репозитория требуется логин-токен
-spring.cloud.config.server.git.username=Killer-8686
-spring.cloud.config.server.git.password=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
+spring.cloud.config.server.git.username=**********Username**********
+spring.cloud.config.server.git.password=**********token**********
 
 # Название ветки которую нужно клонировать
 spring.cloud.config.server.git.default-label=main
