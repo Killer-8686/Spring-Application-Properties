@@ -26,6 +26,9 @@ Spring Application properties
 Порт запуска приложения
 server.port=8080
 
+# Настройка для добавления текста ошибки в Responce
+server.error.inclide-message=always
+
 Профилирование. Можно задавать несколько профилей
 spring.profile.active=micro
 
