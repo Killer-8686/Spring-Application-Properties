@@ -27,7 +27,7 @@ Spring Application properties
 server.port=8080
 
 # Настройка для добавления текста ошибки в Responce
-server.error.inclide-message=always
+server.error.include-message=always
 
 Профилирование. Можно задавать несколько профилей
 spring.profile.active=micro
