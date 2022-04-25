@@ -231,3 +231,7 @@ logging.level.org.springframework.cloud.stream.messaging=trace
 # spring.cloud.stream.bindings.todoInputChannel.destination = planner-micro
 # Прописывается в МС потребителе
 # spring.cloud.stream.bindings.todoOutputChannel.destination = planner-micro
+
+# Прописывается для видимости сообщений в UI Rabbit
+spring.cloud.stream.bindings.userOutputChannel.group = order-group
+spring.cloud.stream.bindings.userInputChannel.group = order-group
