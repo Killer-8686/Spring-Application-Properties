@@ -205,3 +205,29 @@ logging.pattern.console=%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n
 management.endpoint.gateway.enabled=true
 # Какие endpoint хотим включить
 management.endpoints.web.exposure.include=*
+
+
+-----------------------------------
+
+            Spring Cloud Stream
+
+# Адрес MQ
+spring.rabbitmq.host=localhost
+
+# Порт подключения
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+
+logging.level.org.springframework.cloud.stream.messaging=trace
+
+# В интерфейсах в МС создаются каналы. 
+# Исходящие/входящие. Им присваюиваются названия.
+# Эти названия прописыватся в настройках Produser`a & Consumer`a.
+#
+# todoInputChannel/todoOutputChannel - имена каналов
+# planner-micro - должно совпадать и в Produser`e & Consumer`e.
+# Прописывается в МС получателе
+# spring.cloud.stream.bindings.todoInputChannel.destination = planner-micro
+# Прописывается в МС потребителе
+# spring.cloud.stream.bindings.todoOutputChannel.destination = planner-micro
